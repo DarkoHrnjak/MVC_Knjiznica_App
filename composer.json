@@ -1,0 +1,17 @@
+{
+    "name": "knjiznica/app",
+    "description": "MVC primjer sa posudbama knjiga",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Darko",
+            "email": "darkohrnjak06@gmail.com"
+        }
+    ],
+    "require": {}
+}
