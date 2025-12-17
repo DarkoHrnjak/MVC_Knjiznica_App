@@ -1,0 +1,190 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* OSNOVNO */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+/* NAV */
+nav a {
+    color: #ecf0f1;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* USER INFO */
+.user-info {
+    font-size: 14px;
+    background-color: #34495e;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.logo {
+    padding-left: 40px;
+    background-image: url("../images/library.png");
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    background-position: left center;
+    line-height: 28px;
+}
+
+/* MAIN */
+main {
+    max-width: 1100px;
+    margin: 10px auto;
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+label{
+    display: block;
+}
+
+/* =========================
+   ADMIN TABLICE
+   ========================= */
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.data-table thead {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.data-table th {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: #2d8ceb;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #cadef1;
+}
+
+.data-table tbody tr:hover {
+    background-color: #eef3f7;
+}
+
+/* =========================
+   ACTION BUTTONS
+   ========================= */
+
+.btn-unlock {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #27ae60;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-unlock:hover {
+    background-color: #1e8449;
+}
+
+/* =========================
+   RESPONSIVE (TABLE SCROLL)
+   ========================= */
+
+@media (max-width: 768px) {
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+
+
+
+/* FORME */
+.form-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-box h2 {
+    margin-bottom: 15px;
+}
+
+.form-box label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.form-box button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background-color: #1f6391;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 50px;
+    padding: 15px;
+    text-align: center;
+    background-color: #2c3e50;
+    color: #fff;
+}
