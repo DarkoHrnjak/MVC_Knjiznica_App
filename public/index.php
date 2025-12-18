@@ -1,18 +1,7 @@
 <?php
-
-
-define('DEBUG', true);
-
-if (DEBUG) {
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
-}
-
-
-
-
-session_start();
-require_once __DIR__.'/../vendor/autoload.php';
+//session_start();
+//require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/../bootstrap.php';
 
 use App\Controllers\HomeController;
 

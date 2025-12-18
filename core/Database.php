@@ -7,30 +7,34 @@ use Dotenv\Dotenv;
 
 class Database{
 
-    private static ?PDO $instance = null;
+    private PDO $pdo;
+
+    private static ?Database $instance = null;
+
+    private function __construct(){
+        $dsn="mysql:host=".Config::get('DB_HOST').";dbname=".Config::get('DB_HOST').";charset=utf8mb4";
+
+        try{
+            $this->pdo = new PDO(
+                $dsn,
+                Config::get("DB_USER"),
+                Config::get("DB_PASS"),
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_CURSOR_NAME => PDO::FETCH_ASSOC
+                ]
+            );
+        }
+        catch(PDOException $e){
+            die("DB error: ".$e->getMessage());
+        }
+    }
 
     public static function getInstance(): PDO{
-        if(self::$instance===null){
-            $dotenv = Dotenv::createImmutable(__DIR__.'/../');
-            $dotenv->load();
-
-            $dsn="mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['DB_NAME']};charset=utf8mb4";
-
-            try{
-                self::$instance = new PDO(
-                    $dsn,
-                    $_ENV["DB_USER"],
-                    $_ENV["DB_PASS"],
-                    [
-                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                        PDO::ATTR_CURSOR_NAME => PDO::FETCH_ASSOC
-                    ]
-                    );
-            }
-            catch(PDOException $e){
-                die("DB error: ".$e->getMessage());
-            }
-        }
-        return self::$instance;
+       if(self::$instance===null){
+        self::$instance = new self();
+       }
+        
+        return self::$instance->pdo;
     }
 }
